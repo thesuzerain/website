@@ -1,7 +1,7 @@
 ---
-layout: base
+layout: blog
 title: My First Post
-tags: general
+tags: blog
 ---
 
 Hello from {{ title }}!
