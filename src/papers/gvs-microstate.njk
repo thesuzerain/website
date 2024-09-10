@@ -1,0 +1,62 @@
+---
+layout: paper
+title: Effects of GV stimulation on EEG microstates
+tags: paper
+url: https://ieeexplore.ieee.org/abstract/document/10053026
+
+
+description: Evaluating the Effect of Galvanic Vestibular Stimulation in Parkinson's disease via Microstate Resting State EEG Analysis
+icon: fa-solid fa-brain
+---
+
+<div class='project-page-card'>
+<p>Galvanic vestibular stimulation (GVS) is a type of electric stimulation that can be applied to the nerve near our ear that helps us keep our balance. We can feel certain frequencies like a change in our balance- closing our eyes, it feels almost exactly like rocking in a hammock. Higher frequencies aren't consciously perceptible but can be shown to have certain minor impacts on our brain state. Because GVS is a lot less invasive than other forms of brain stimulation, it's an interesting topic for research in Parkinson's and other diseases.</p>
+</div>
+
+<div class='project-page-card'>
+<p>EEG data is high-dimensional, complex, and difficult to easily conceptualize. One way to visualize it is to reduce it into 'microstates', by saying at any given moment it best fits 1 of 4 discrete patterns. So instead of dozens of channels of sinusoidal data, we can approximate it with a sequence of states: `AABCADAB...`, which allows us to easily observe how the brain state changes over time.</p>
+</div>
+
+<div class='figure-1-box'><div class='project-page-figure'><img src='/assets/microstates-states.jpg'></img>
+<p>The four different microstates, and a sequence of them.</p></div></div>
+
+<div class='project-page-card'>
+            <p>
+We can extract the following features from these microstates:
+</p>
+<ul>
+<li>Mean microstate duration (ms): how long, on average, we remain in microstate A (or B, C, D) once we enter it.</li>
+<li>Mean microstate occurrence (Hz): how often we enter microstate A (or B, C, D) per second.</li>
+<li>Mean microstate coverage (%): how much of the time we spend in microstate A (or B, C, D) compared to the total time.</li>
+<li>Transition probabilities: how likely we are to switch from microstate A to B, or B to C, etc.</li>
+<li>Global explained variance: how much of the variance in the EEG data is explained by these microstates. (Or essentially, how well can we recreate the original data from just this sequence 4 states?)</li>
+</ul>
+</div>
+
+<div class='project-page-card'>
+<p>
+We found some very minor correlations for these features. Using a random forest classifier, we we can attempt to predict from these features whether a patient is is Parkinsonian or not, as well as whether they are currently receiving GVS (a type of brain stimulation). 
+</p>
+</div>
+
+<div class='figure-2-box'>
+<div class='project-page-figure'><img src='/assets/microstates-random-forest.jpg'></img><p>Accuracy of random forest classifier using microstate features</p></div>
+</div>
+
+<div class='project-page-card'>
+<p>
+As classifiers, these are rather weak (60-70% test accuracy on binary data is not clinically useful). However, several of these features (mean duration of state A, mean duration of state D, and coverage of state C) are statistically significant in differentiating `ON` and `OFF` states, especially across different GVS stimulation frequencies. In particular, duration of state D is significant in differentiating people with Parkinson's from healthy controls.
+</p>
+</div>
+
+
+<style>
+.figure-1-box {
+    max-width: 25rem;
+}
+
+.figure-2-box {
+    max-width: 30rem;
+}
+
+</style>

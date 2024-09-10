@@ -1,0 +1,56 @@
+---
+layout: paper
+title: Detection of 'off-medication' Parkinsonian states with sensors
+tags: paper
+url: https://www.mdpi.com/2075-4426/13/2/265
+description: An Individualized Multi-Modal Approach for Detection of Medication “Off” Episodes in Parkinson’s Disease via Wearable Sensors
+icon: fa-solid fa-heart-pulse
+---
+
+<div class='project-page-card'>
+    <p>One common treatment type for Parkinson's disease is <i>levodopa</i>. When taken, over the course of the day, the patient will feel their symptoms well managed (which we call the `ON` state), but will feel the effects wear off and Parkinsonian symptoms re-emerge (`OFF`). Because levodopa does not take immediate effect, in order to stay `ON` without overconsuming the levodopa, patients want to take it about an hour before it begins to wear off. So, it would be very useful to find a biomarker (some variable or indicator from your body) that helps us predict when to best take this medication.</p>
+</div>
+
+<div class='project-page-card'>
+    <p>Using an <a href='https://www.empatica.com/research/e4/'>E4 wristband</a>, we are able to measure heart rate, electrodermal activity (called 'EDA', and is more or less how conductive your skin is because of sweat), and other similar signals. We might imagine these to vary as someone's medication wears off, and we found that it was! Because it's easy to wear (and data can be streamed from it), if the data it collects can predict when the `OFF` state approaches, we have a very useful tool for Parkinson's patients to wear to help them take their medication at the optimal time.</p>
+</div>
+
+<div class='project-page-card'>
+    <p>We extracted markers from time series of EDA, heart rate, and other signals, and compared them to the self-reported journals of Parkinsonian patients taking levodopa over extended periods of time. We found that our features were able to predict their `ON` or `OFF` state with 90-100% accuracy per patient. However, <i>which</i> predictors were useful were not consistent for everyone, meaning that the biomarkers for `OFF` and `ON` showed themselves differently on each person. </p>
+</div>
+
+<div class='figure-1-box'>
+    <div class='project-page-figure'>
+        <img src='/assets/eda-training-test.png'></img>
+        <p>Accuracy of E4 features identifying `ON`/`OFF`</p>
+    </div>
+</div>
+
+<div class='project-page-card'>
+    <p>Unfortunately, our features were not as good at predicting the future as we hoped (for how much we could predict future 'wear off'). We did, however, find that <i>how</i> predictible someone was was loosely correlated to their UPDRS-III score (a metric of Parkinson's disease), possibly implying that more severe cases of Parkinson's may have their medication wear-off periods more predictible by our features.</p>
+</div>
+
+<div class='figure-2-box'>
+    <div class='project-page-figure'>
+        <img src='/assets/eda-correlation.jpg'></img>
+        <p>UPDRS-III vs. Predictibility of future `OFF` states</p>
+    </div>
+</div>
+
+<div class='project-page-card'>
+    <p>These results are minor in impact but rather promising and merits further study- clearly, the relationship between `OFF` and E4-detectible features exists, but needs further investigation to find one that is clinically useful.</p>
+</div>
+
+<a href="{{url}}" class='cta-btn'>
+Read full paper: <i class="{{icon}}"></i>
+</a>
+
+<style>
+    .figure-1-box {
+        max-width: 25rem;
+    }
+
+    .figure-2-box {
+        max-width: 25rem;
+    }
+</style>

@@ -11,7 +11,7 @@ title: Projects
                 <div class="project-header">
                     <i class="{{project.data.icon}} folder-icon"></i>
                     <div class="small-icons">
-                        <a href={{project.data.url}}><i class="fa-brands fa-github"></i></a>
+                        <a href={{project.data.link.url}}><i class="{{project.data.link.icon}}"></i></a>
                     </div>
                 </div>
                 <h3>{{project.data.title}}</h3>

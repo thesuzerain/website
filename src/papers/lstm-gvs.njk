@@ -1,0 +1,40 @@
+---
+layout: paper
+title: Effects of GV stimulation on EEG neuromarkers
+tags: paper
+url: https://www.brainstimjrnl.com/article/S1935-861X(21)00428-9/fulltext
+icon: fa-solid fa-brain
+description: Galvanic Vestibular Stimulation effects on LSTM-based EEG neuro-markers of Motor Vigor in Parkinson's Disease
+---
+
+<div class='project-page-card'>
+<p>One key symptom that appears for a lot of Parkinsonian patients is a lack of reduced (or otherwise impacted) motor vigour. This is an aggregate measure of work being put into a movement (affected by strength, reaction time, etc). One particular way to measure this is by using a force transducer, which measures the force of a grip. We can measure this grip after a timing cue (i.e.: "Squeeze now!"), and how quickly it changes, to get a sense of how much vigour someone is putting into a movement. </p>
+</div>
+
+<div class='project-page-figure'><img src='/assets/lstm-mv-example.png'></img><p>Diagram of how we measure motor vigour after a 'GO' signal, as P<sub>max</sub> /(t<sub>3</sub> - t<sub>2</sub>). Reaction time can be calculated as (t<sub>2</sub> - t<sub>1</sub>).</p></div>
+
+<div class='project-page-card'>
+<p>Electroencephalography (EEG) is a method of measuring the electrical activity of the brain. It's non-invasive, and can be used to measure the brain's response to different stimuli. It produces multi-channel time series data. It provides a lot of useful information about the brain: such as the strength of different frequency bands (alpha, beta, gamma, etc.), and what area of the brain is active at a given time.</p>
+</div>
+
+<div class='project-page-card'>
+<p>One way we can analyze this data is by using a Long Short-Term Memory (LSTM) neural network, which is a type of neural network with a memory component that allows it to remember past states (making it good for time series data).</p>
+</div>
+
+<div class='project-page-card'>
+<p>We found that extracted EEG features were able to predict their motor vigour with 75% accuracy in health patients and 81% accuracy in healthy patients.</p>
+</div>
+
+<div class='figure-1-box'>
+<div class='project-page-figure'><img src='/assets/lstm-result.png'></img><p>Impact of each EEG frequency band on our LSTM's ability to predict motor vigour.</p></div>
+</div>
+
+<div class='project-page-card'>
+<p>In addition, we interrogated the LSTM and found that the alpha, beta, and gamma frequency bands to be more informative of motor vigour in Parkinson's patients than in healthy controls.</p>
+</div>
+
+<style>
+.figure-1-box {
+    max-width: 40rem;
+}
+</style>

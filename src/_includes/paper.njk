@@ -7,17 +7,18 @@ layout: base
         <b>Tools</b>: {{ tools}}
     </div>
     {{ content | safe }}
+
     <div class="footer-bar">
-        {% set previousPost = collections.project | getPreviousCollectionItem(project) %}
-        {% set nextPost = collections.project | getNextCollectionItem(project) %}
+        {% set previousPost = collections.paper | getPreviousCollectionItem(paper) %}
+        {% set nextPost = collections.paper | getNextCollectionItem(paper) %}
         {% if previousPost %}
-            <a href="{{previousPost.url}}">Previous project</a>
+            <a href="{{previousPost.url}}">Previous paper</a>
         {% endif %}
 
-        <a href="{{url}}" class='cta-btn'>Find out more: <i class="{{icon}}"></i></a>
+        <a href="{{url}}" class='cta-btn'>Read full paper: <i class="{{icon}}"></i></a>
 
         {% if nextPost %}
-            <a href="{{nextPost.url}}">Next project</a>
+            <a href="{{nextPost.url}}">Next paper</a>
         {% endif %}
     </div>
 </div>
