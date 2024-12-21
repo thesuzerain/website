@@ -43,7 +43,7 @@ This performs very badly, as it requires a lookup and index update for every row
 
 ---
 
-1. Inserting without indexes, deduplicating the data, and then adding the indexes back in.
+1. Inserting without indexes using normal `INSERT INTO` (with batching), deduplicating the data, and then adding the indexes back in.
 2. Inserting without indexes using a `COPY` stream, deduplicating the data, and then adding the indexes back in.
 
 For deduplication, we will compare the following strategies:
@@ -54,3 +54,5 @@ For deduplication, we will compare the following strategies:
 - Deduplication in Clickhouse using ReplacingMergeTree.
 - Deduplication in Rust through a BTreeMap.
 - Deduplication in Rust through a memory-mapped BTreeMap (or similar).
+
+---
