@@ -1,7 +1,6 @@
 ---
 layout: base
-title: My Project
-
+title: Wyatt Verchere
 ---
 
 {% include "components/hero.njk" %}
